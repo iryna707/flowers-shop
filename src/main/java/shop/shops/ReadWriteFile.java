@@ -14,7 +14,7 @@ import shop.models.flowers.ChamomileFlower;
 import shop.models.flowers.RoseFlower;
 
 public class ReadWriteFile {
-    ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+    private ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 
     public void writeFile(String json){
         Charset charset = Charset.forName("US-ASCII");
