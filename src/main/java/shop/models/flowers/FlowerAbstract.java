@@ -2,11 +2,12 @@ package shop.models.flowers;
 
 public abstract class FlowerAbstract implements Flower {
 
-    final int height;
-    final int basePrice;
-    final String color;
+    private final int height;
+    private final int basePrice;
+    private final String color;
 
     public FlowerAbstract(int height, String color, int basePrice) {
+
         this.height = height;
         this.color = color;
         this.basePrice = basePrice;

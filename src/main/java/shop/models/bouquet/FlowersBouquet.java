@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class FlowersBouquet {
 
-    public final List<Flower> flowers;
+    private final List<Flower> flowers;
 
     public FlowersBouquet(List<Flower> flowers) {
         this.flowers = flowers;

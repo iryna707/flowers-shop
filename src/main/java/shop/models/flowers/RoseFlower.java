@@ -10,7 +10,7 @@ public class RoseFlower extends FlowerAbstract {
 
     @Override
     public int getPrice() {
-        return basePrice * height;
+        return getPrice() * getHeight();
     }
 
     @Override

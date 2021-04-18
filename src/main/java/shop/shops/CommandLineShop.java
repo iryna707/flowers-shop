@@ -13,7 +13,7 @@ public class CommandLineShop {
         f.addFlower(new ChamomileFlower(2, "black", 3));
         String s = f.constructBouquet();
         System.out.println(s);
-        ReadWriteFile reads = new ReadWriteFile();
+        WriteFile reads = new WriteFile();
         reads.storesBouquet(f);
     }
 }

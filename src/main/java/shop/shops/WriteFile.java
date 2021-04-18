@@ -10,10 +10,8 @@ import java.nio.file.Paths;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import shop.models.bouquet.FlowersBouquet;
-import shop.models.flowers.ChamomileFlower;
-import shop.models.flowers.RoseFlower;
 
-public class ReadWriteFile {
+public class WriteFile {
     private ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 
     public void writeFile(String json){
