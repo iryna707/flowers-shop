@@ -1,15 +1,21 @@
 package shop.models.flowers;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ChamomileFlower extends FlowerAbstract {
 
-    private final static String NAME = "Chamomile";
+    private final String name;
 
-    public ChamomileFlower(int height, String color, int basePrice) {
-        super(height, color, basePrice);
+    public ChamomileFlower(@JsonProperty("height")int height,
+                           @JsonProperty("color")String color,
+                           @JsonProperty("name")String name,
+                           @JsonProperty("price")int price) {
+        super(height, color, price);
+        this.name = name;
     }
 
     @Override
     public String getName() {
-        return NAME;
+        return name;
     }
 }

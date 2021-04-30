@@ -74,10 +74,10 @@ public class ReadDataBase {
         }
 
         if(flowerType.equals("rose")) {
-            return new RoseFlower(height, color, basePrice);
+            return new RoseFlower(height, color, "Rose", basePrice);
         }
         else if(flowerType.equals("chamomile")) {
-            return new ChamomileFlower(height, color, basePrice);}
+            return new ChamomileFlower(height, color, "Chamomile", basePrice);}
 
         else {
             throw new InvalidFlowerTypeException("Flower type is incorrect");

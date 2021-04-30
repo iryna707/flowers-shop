@@ -1,21 +1,24 @@
-package shop.shops;
+package shop.filesIO;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import shop.models.bouquet.FlowersBouquet;
+import shop.models.flowers.Flower;
 
-public class WriteFile {
-    private ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+public class WriteFileJson {
+    private ObjectWriter ow = new ObjectMapper().enableDefaultTyping().writer().withDefaultPrettyPrinter();
 
-    public void writeFile(String json){
-        Charset charset = Charset.forName("US-ASCII");
+    private void writeFile(String json) {
+        Charset charset = StandardCharsets.US_ASCII;
         Path currentRelativePath = Paths.get("");
         Path sibling = currentRelativePath.resolveSibling("test.txt");
         try (
@@ -24,11 +27,12 @@ public class WriteFile {
         } catch (
                 IOException x) {
             System.err.format("IOException: %s%n", x);
+        }
+
     }
 
-}
-    public void storesBouquet(FlowersBouquet bouquet)  throws Exception{
-        String json = ow.writeValueAsString(bouquet);
+    public void storeFlowers(List<Flower> flowers) throws Exception {
+        String json = ow.writeValueAsString(flowers);
         writeFile(json);
     }
 
